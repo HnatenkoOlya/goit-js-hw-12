@@ -3,8 +3,11 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 
 const gallery = document.querySelector(".gallery");
 
-export function renderImages(images) {
-    gallery.innerHTML = images 
+export function renderImages(images, append = false) {
+  if (!append) {
+    gallery.innerHTML = "";
+}
+    const imagesMarkup = images 
      .map(({
         webformatURL,
         largeImageURL,
@@ -25,6 +28,8 @@ export function renderImages(images) {
             </a>
            </li>`)
      .join("");
+     gallery.insertAdjacentHTML("beforeend", imagesMarkup);
+     
      const lightbox = new SimpleLightbox('.gallery a', {
       captionsData: 'alt',
       captionPosition: 'bottom',

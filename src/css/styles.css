@@ -52,6 +52,9 @@
     margin-top: 32px;
     margin: 0 auto;
 }
+.loading {
+  display: none;
+}
 /*.loader{
   font-size: 48px;
   color:  #5989d0;
@@ -130,8 +133,11 @@
   text-align: center;
   color: black;
 }
-.load-btn {
+.din-btn {
   display: flex;
+}
+.load-btn {
+  display: none;
   margin-inline: auto;
   justify-content: center;
   width: 125px;
